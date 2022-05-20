@@ -2,11 +2,11 @@ import React from "react";
 import Nav from "../Nav/Nav";
 import "./Header.css"
 
-const Header = () => {
+const Header = ({active,setActive}) => {
   return (
     <header>
       Header 
-      <Nav />
+      <Nav active={active} setActive={setActive}/>
     </header>
   );
 };

@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 
-const Profile = ({ username }) => {
-  
+const Profile = ({ username, setActive }) => {
   const navigate = useNavigate();
 
   let { id } = useParams();
@@ -12,7 +11,9 @@ const Profile = ({ username }) => {
       this is profile page for {username}
       <button
         onClick={() => {
-          navigate(`/about/${id}`);
+          navigate(`/about/${id}`,
+            setActive((prev) => (prev = "about"))
+          );
         }}
       >
         Go to about page

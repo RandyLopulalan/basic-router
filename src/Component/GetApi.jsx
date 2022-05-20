@@ -3,11 +3,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 const getApi = "https://jsonplaceholder.typicode.com/users";
 
-const GetApi = ({setUsername}) => {
-
+const GetApi = ({ setUsername, setActive }) => {
   const [users, setUsers] = useState([]);
-  
-  const toProfile = useNavigate()
+
+  const toProfile = useNavigate();
 
   useEffect(() => {
     axios.get(getApi).then((res) => {
@@ -20,10 +19,18 @@ const GetApi = ({setUsername}) => {
     <div className="list_users">
       {users.map(({ id, name, email }) => {
         return (
-            <article key={id} onClick={() => toProfile(`/profile/${id}`, setUsername(prev => prev = name))}>
-              <h3>{name}</h3>
-              <h3>{email}</h3>
-            </article>         
+          <article
+            key={id}
+            onClick={() =>
+              toProfile(`/profile/${id}`,
+                setUsername((prev) => (prev = name)),
+                setActive((prev) => (prev = "profile"))
+              )
+            }
+          >
+            <h3>{name}</h3>
+            <h3>{email}</h3>
+          </article>
         );
       })}
     </div>
