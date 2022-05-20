@@ -1,17 +1,18 @@
-import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const Profile = () => {
+const Profile = ({ username }) => {
   
   const navigate = useNavigate();
-  let { username } = useParams();
+
+  let { id } = useParams();
+
   return (
     <div>
       <h1>Profile</h1>
       this is profile page for {username}
       <button
         onClick={() => {
-          navigate(`/about/${username}`);
+          navigate(`/about/${id}`);
         }}
       >
         Go to about page
