@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import GetApi from "../../Component/GetApi";
+import './Home.css'
 
 const Home = () => {
-  const [count ,setCount] = useState(0)
   return (
     <div>
       <h1>Home</h1>
-      <button onClick={() => setCount(prev => prev + 1)}>+</button>
-      {count}
-      <button onClick={() => setCount(prev => prev - 1)}>-</button>
+      <h5>List Users</h5>
+      <GetApi/>
     </div>
   );
 };

@@ -4,8 +4,6 @@ import { useNavigate, useParams } from "react-router-dom";
 const Profile = () => {
   
   const navigate = useNavigate();
-
-  ///profile/randy
   let { username } = useParams();
   return (
     <div>
@@ -13,7 +11,7 @@ const Profile = () => {
       this is profile page for {username}
       <button
         onClick={() => {
-          navigate("/about");
+          navigate(`/about/${username}`);
         }}
       >
         Go to about page

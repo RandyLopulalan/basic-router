@@ -8,10 +8,7 @@ const Hero = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/profile/" element={<Profile />} />
-
-        {/* profile/randy */}
+        <Route path="/about/:username" element={<About />} />
         <Route path="/profile/:username" element={<Profile />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

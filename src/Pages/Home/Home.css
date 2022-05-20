@@ -1,0 +1,24 @@
+h1 {
+  margin: 2em 0 0 0;
+}
+
+h5 {
+  margin-bottom: 4em;
+}
+
+.list_users {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  gap: 1em;
+  padding: 0.5em;
+  margin: 0.5em;
+  width: auto;
+  height: 2em;
+}
+
+article {
+  border: 2px solid gray;
+  padding: 0.5em;
+  margin: 0.5em;
+}
